@@ -68,6 +68,20 @@ function greenEggs(para){
     }
   };
   console.log(textArray);
+
+  
+
+ function uniqueWords (){} 
+ let uniqueStatus = '<ul>';
+ for(const property in textArray) {
+    if(textArray[property] == 1){
+    uniqueStatus += '<li>';
+    uniqueStatus += property;
+    uniqueStatus += '</li>';
+    }
+  }
+  uniqueStatus += '</ul>';
+  document.getElementById("unique").innerHTML = uniqueStatus;
 }
 
 //Alice In WonderLand
