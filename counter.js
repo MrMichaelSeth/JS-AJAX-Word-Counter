@@ -71,75 +71,39 @@ function greenEggs(para){
 
   
 
- function uniqueWords (){} 
- let uniqueStatus = '<ul>';
- for(const property in textArray) {
-    if(textArray[property] == 1){
-    uniqueStatus += '<li>';
-    uniqueStatus += property;
-    uniqueStatus += '</li>';
+      function uniqueWords (){
+      let uniqueStatus = '<ul>';
+      for(const property in textArray) {
+          if(textArray[property] == 1){
+          uniqueStatus += '<li>';
+          uniqueStatus += property;
+          uniqueStatus += '</li>';
+          }
+        }
+        uniqueStatus += '</ul>';
+        document.getElementById("unique").innerHTML = uniqueStatus;
     }
-  }
-  uniqueStatus += '</ul>';
-  document.getElementById("unique").innerHTML = uniqueStatus;
+
+    uniqueWords();
+  
+    function mostUsed (){ 
+      let lowest;
+      let highest = 0;
+      let mostUsedStatus = '<ul>';
+      for(const property in textArray) {
+          if(textArray[property] > highest){
+          highest = property;
+          } else {
+          lowest = property;
+          }
+        }
+          mostUsedStatus += '<li>';
+          mostUsedStatus += highest;
+          mostUsedStatus += '</li>';
+          mostUsedStatus += '</ul>';
+          document.getElementById("mostUsed").innerHTML = mostUsedStatus;
+        }
+
+        mostUsed();
+
 }
-
-//Alice In WonderLand
-
-// var xhr2 = new XMLHttpRequest ();
-//     xhr2.onreadystatechange = function() {
-//       if (xhr2.readyState === 4 && xhr2.status == 200){
-//         document.getElementById("alice").innerHTML = xhr2.responseText;
-//         wonderLand(xhr2.responseText);
-//       }
-//     }
-//     xhr2.open("GET", "https://class-demo-files-and-resources.s3.amazonaws.com/Alice-In-Wonderland.txt");
-//     xhr2.send();
-
-// function wonderLand(para){
-
-//   let refinedText = "";
-//   let holder = "";
-//   let noDoubleSpace = false;
-
-//   for (let t = 0; t < para.length; t++){
-//     if(para[t] == "\n") {
-//       refinedText += `${holder} `;
-//       holder = "";
-//     } else if (para[t] == "."){
-//       refinedText += `${holder}`;
-//       holder = "";
-//     } else if (para[t] == "!"){
-//       refinedText += `${holder}`;
-//       holder = "";
-//     } else if (para[t] == "?"){
-//       refinedText += `${holder}`;
-//       holder = "";
-//     } else if (para[t] == " ") {
-//       refinedText += `${holder} `;
-//       holder = "";
-//     } else if (para[t] == ",") {
-//       refinedText += `${holder} `;
-//       holder = "";
-//     } else if (para[t] == para.length - 1) {
-//       refinedText += `${holder}`;
-//     } else {
-//       holder += para[t];
-//     }      
-//   }
-
-//   console.log(refinedText);
-
-//   let splitRefinedText = refinedText.split(' ');
-//   console.log(splitRefinedText);
-
-//   let textArray = {};
-//   for(let j = 0; j < splitRefinedText.length; j++){
-//     if (!textArray[splitRefinedText[j]]) {
-//       textArray[splitRefinedText[j]] = 1;
-//     } else {
-//       textArray[splitRefinedText[j]]++;
-//     }
-//   };
-//   console.log(textArray);
-// }
