@@ -41,18 +41,23 @@ function greenEggs(para){
   console.log(refinedText);
 
   function noEmptyStrings (para) {
-    let holder = ""; 
-    for (let i = 0; i < refinedText.length; i++){
-      if(para[i] == !""){
-        holder += para[i];
+    let newArray = []
+    for (let i = 0; i < para.length; i++){
+      if(para[i] !== ""){
+        newArray.push(para[i]);
       }
     } 
+    return newArray;
   }
  
 
 
   let splitRefinedText = refinedText.split(' ');
+
+  splitRefinedText = noEmptyStrings(splitRefinedText);
   console.log(splitRefinedText);
+
+  
 
   let textArray = {};
   for(let j = 0; j < splitRefinedText.length; j++){
